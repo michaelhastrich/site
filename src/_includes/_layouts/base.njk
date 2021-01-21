@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <title>{{ title }}</title>
+    
+</head>
+<body>
+    <section class="introduction">
+    <div class="inner-wrapper">
+        <h1 class="intro__header">Hi, I am<br><span>{{ title }}</span><br>{{ subtitle }}</h1>
+        {% block content %}
+            {{ content | safe }} 
+        {% endblock %}
+
+    </div>
+    </section>
+    <section class="skills">
+        <div class="inner-wrapper">
+            <div class="section__intro">
+                <h2 class="section__header">Things I do best</h2>
+                <p class="section__description">Front-end development covers so many different skills that I'd like to emphasize what I'm good at and what I care about. If you are looking for someone to help you set up a maintainable and solid codebase, maybe I can help. Below are the things I care most about in my work.</p>
+            </div>
+            {% include "../_partials/skills.njk" %}
+        </div>
+    </section>
+    <section class="projects">
+        <div class="inner-wrapper">
+            <div class="section__intro">
+                <h2 class="section__header">Previous projects</h2>
+                <p class="section__description">Front-end development covers so many different skills that I'd like to emphasize what I'm good at and what I care about. If you are looking for someone to help you set up a maintainable and solid codebase, maybe I can help. Below are the things I care most about in my work.</p>
+            </div>
+            {% include "../_partials/projects.njk" %}
+        </div>
+    </section>
+    <section class="contact">
+            <div class="inner-wrapper">
+                <h2 class="section__header">Would you like to team up?</h2>
+                <p>Do you want to know more or find out if I could be a valuable addition to your team and the product your working on?</p>
+                <p>Simply send me <a href="mailto:hi@michaelhastrich.nl">an email</a> or connect on <a href="https://www.linkedin.com/in/michael-hastrich-74b31510/">Linkedin</a>. I'm more than happy to drop by your office for a coffee and to answer any questions.</p>
+            </div>
+        </section>
+</body>
+</html>

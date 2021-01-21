@@ -1,0 +1,13 @@
+<ul class="projects__list list--unstyled grid-layout grid-layout--3-cols">
+    {% for project in collections.projects %}
+    <li class="project flow">
+        <h3 class="project__title">{{ project.data.title }}</h3>
+        <div class="project__image">
+            <img src="/assets/img/projects/{{ project.data.img }}" alt="">
+        </div>
+        <div class="project__description">
+            {{ project.data.content | safe }}
+        </div>
+    </li>
+    {% endfor %}
+</ul>

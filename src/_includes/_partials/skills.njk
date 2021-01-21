@@ -1,0 +1,8 @@
+<ol class="skills list--unstyled grid-layout">
+    {% for skill in collections.skills %}
+    <li class="skill">
+        <h3>{{ skill.data.title }}</h3>
+        {{ skill.data.content | safe }}
+    </li>
+    {% endfor %}
+</ol>

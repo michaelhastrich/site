@@ -1,4 +1,407 @@
+:root {
+    --link-color: cyan;
+    --section-padding: 2.5rem 0;
+}
+
+.flow {
+    --flow-space: 1rem;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space);
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'KranaFatA';
+    src: url('../assets/fonts/KranaFatA.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Gordita';
+    src: url('../assets/fonts/gorditaregular.woff2') format('woff2'),
+        url('../assets/fonts/gorditaregular.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Gordita';
+    font-weight: bold;
+    src: url('../assets/fonts/gorditabold.woff2') format('woff2'),
+        url('../assets/fonts/gorditabold.woff') format('woff');
+}
+
+/*------------------------------------*\
+      #BASE
+  \*------------------------------------*/
+/**
+   * These are base HTML elements, things with no classes on them, e.g. `h1 {}`,
+   * `blockquote {}`.
+   */
+/*------------------------------------*\
+      #BASE
+  \*------------------------------------*/
+/**
+   * Pull in all the base files we want.
+   */
+/* global box-sizing */
+*,
+*:after,
+*:before {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: sans-serif;
-    color: purple;
+    font-family: 'Gordita', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #23282d;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'KranaFatA', Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    color: var(--link-color);
+}
+@media (min-width: 48em) {
+    h1 {
+        font-size: 3.5rem;
+    }
+}
+
+a {
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    background-image: linear-gradient(
+        to top,
+        var(--link-color),
+        var(--link-color)
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 15%;
+    background-position: left bottom;
+    transition: background-size 80ms ease-in;
+}
+a:hover {
+    background-size: 100% 100%;
+    color: #000;
+}
+
+.list--unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*------------------------------------*\
+  MISC
+  \*------------------------------------*/
+::selection {
+    background: cyan;
+    text-shadow: none;
+}
+
+::-webkit-selection {
+    background: cyan;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: cyan;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+      #OBJECTS
+  \*------------------------------------*/
+/**
+   * These are design-free objects, abstractions and design patterns. These create
+   * constructs that you lay your designs over.
+   */
+/*------------------------------------*\
+      #OBJECTS
+  \*------------------------------------*/
+/**
+   * Pull in all our objects and abstractions.
+   */
+section {
+    padding: var(--section-padding);
+}
+@media (min-width: 48em) {
+    section {
+        --section-padding: 3.5rem 0;
+    }
+}
+
+/* wrapper */
+.inner-wrapper {
+    max-width: 80em;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 1em;
+}
+@media (min-width: 50em) {
+    .inner-wrapper {
+        padding: 0 2em;
+    }
+}
+
+.grid-layout {
+    margin-top: 1rem;
+}
+@media (min-width: 40em) {
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        margin-top: 2rem;
+    }
+}
+@media (min-width: 60em) {
+    .grid-layout--3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* header */
+.header {
+    background-color: cyan;
+    color: #000;
+}
+
+.header__link {
+    color: #000;
+    display: inline-block;
+    font-family: 'KranaFatA';
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0.7rem 0 0.5rem;
+}
+
+.content--single-post {
+    background-color: #fff;
+    padding: 4rem 2rem;
+}
+
+.article--single-post {
+    max-width: 65ch;
+    /* margin-left: auto; */
+}
+
+.home main {
+    background-color: #ff6156;
+}
+
+/*------------------------------------*\
+      #GUI
+  \*------------------------------------*/
+/**
+   * These are your components and modules; things like buttons, accordions,
+   * carousels, etc.
+   */
+/*------------------------------------*\
+      #GUI
+  \*------------------------------------*/
+/**
+   * Pull in all our GUI components.
+   */
+.contact {
+    background-color: yellow;
+}
+
+.skills {
+    background-color: #ff6156;
+}
+
+.header {
+    background-color: #23282d;
+    color: #fff;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+}
+
+.header__link {
+    background-image: none;
+    color: yellow;
+}
+
+.navigation {
+    margin-left: auto;
+}
+
+.section__header {
+    font-size: 2.5rem;
+    line-height: 1;
+    max-width: 75vw;
+    margin-bottom: 2rem;
+}
+@media (min-width: 48em) {
+    .section__header {
+        max-width: 30vw;
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 60em) {
+    .section__header {
+        max-width: 25vw;
+    }
+}
+
+@media (min-width: 50em) {
+    .section__intro {
+        display: flex;
+    }
+}
+
+.section__description {
+    font-weight: 700;
+    max-width: 70ch;
+}
+@media (min-width: 50em) {
+    .section__description {
+        margin-left: 1rem;
+        margin-top: -0.25rem;
+    }
+}
+
+.introduction {
+    --link-color: yellow;
+    background-color: #23282d;
+    color: #fff;
+    min-height: 50vh;
+}
+.introduction p {
+    font-size: 1.2rem;
+}
+@media (min-width: 48em) {
+    .introduction p {
+        font-size: 1.5rem;
+    }
+}
+.introduction a {
+    color: #fff;
+    background-image: linear-gradient(
+        to top,
+        var(--link-color),
+        var(--link-color)
+    );
+}
+.introduction a:hover {
+    color: #000;
+}
+
+.intro__header {
+    color: yellow;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+.intro__header span {
+    color: #fff;
+    font-size: 4.5rem;
+    line-height: 0.9;
+    text-transform: capitalize;
+}
+
+.skills ol {
+    counter-reset: custom-counter;
+}
+.skills ol li {
+    counter-increment: custom-counter;
+    color: #000;
+    position: relative;
+}
+.skills ol li::before {
+    color: #000;
+    content: counter(custom-counter);
+    display: inline-block;
+    font-family: 'KranaFatA';
+    font-size: 10rem;
+    left: -2rem;
+    position: absolute;
+    text-align: center;
+    top: -3rem;
+    opacity: 0.2;
+}
+.skills ol h3 {
+    font-size: 1.5rem;
+}
+@media (min-width: 40em) {
+    .skills ol h3 {
+        display: inline-block;
+    }
+}
+
+.skill + .skill {
+    margin-top: 2rem;
+}
+@media (min-width: 40em) {
+    .skill + .skill {
+        margin-top: 0;
+    }
+}
+
+.navigation__list {
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+}
+
+.projects {
+    background-color: #fff;
+}
+
+.project {
+    background-color: #f0f0f0;
+    box-shadow: inset 0 0 35px 0px rgba(203, 203, 203, 0.4);
+    padding: 1.5rem;
+}
+
+.project__image {
+    background-color: #fff;
+    padding: 1rem;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.project__image img {
+    object-fit: contain;
+}
+
+.project__description {
+    font-size: 0.875rem;
 }
