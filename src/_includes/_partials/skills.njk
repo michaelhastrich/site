@@ -2,7 +2,7 @@
     {% for skill in collections.skills %}
     <li class="skill">
         <h3>{{ skill.data.title }}</h3>
-        {{ skill.data.content | safe }}
+        {{ skill.content | safe }}
     </li>
     {% endfor %}
 </ol>

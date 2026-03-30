@@ -1,5 +1,6 @@
 ---
 title: Royal Schiphol Group
+order: 6
 img: schiphol.svg
 ---
 
